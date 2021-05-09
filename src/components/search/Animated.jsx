@@ -4,31 +4,37 @@ import Div from '../atoms/Div'
 import Span from '../atoms/Span'
 import './animated.css';
 
-export default function Animated(props){
+export default function Animated(props) {
   const [statusInput, setStatusInput] = useState(false)
   let textInput = useRef(null);
 
   function handleToggleSearch() {
     setStatusInput(!statusInput)
-//    textInput.current.focus();
   }
   
   function clearSearchField() {
     textInput.current.value=""
-    textInput.current.focus();
+    textInput.current.focus()
   }
 
-  function handleKeyPress(e){
+  function handleKeyPress(e) {
     if(e.code==="Enter") {
-      console.log('here')
-    } else if(e.code==="Escape"){
+      debugger 
+      props.search(e.target.value)
+    } else if(e.code==="Escape") {
       clearSearchField() 
     }
   }  
   
+  function handleOnTransitionEnd(e) {
+    if(statusInput) {
+      textInput.current.focus()
+    }
+  }
+
   return(
     <Div className='contenedor'>
-      <Div className={`search ${statusInput ? 'active' : ''}`}>
+      <Div onTransitionEnd={handleOnTransitionEnd} className={`search ${statusInput ? 'active' : ''}`}>
         <Div className='icon'
           onClick={handleToggleSearch}></Div>
 	<Div className='input'>
