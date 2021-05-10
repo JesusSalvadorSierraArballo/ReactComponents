@@ -19,7 +19,6 @@ export default function Animated(props) {
 
   function handleKeyPress(e) {
     if(e.code==="Enter") {
-      debugger 
       props.search(e.target.value)
     } else if(e.code==="Escape") {
       clearSearchField() 
