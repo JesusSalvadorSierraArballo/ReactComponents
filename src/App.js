@@ -1,5 +1,7 @@
 import Animated from './components/search/Animated'
-import './App.css';
+import Basic from './components/navbar/Basic'
+import {Route, Link} from 'react-router-dom'
+import './App.css'
 
 function App() {
   function search(text) {
@@ -8,17 +10,19 @@ function App() {
   }
   return (
     <div className="App">
-      <header className="App-header">
-	
-      </header>
-    <main>
-      <section>
-	<nav>
-	  <a href='http://www.google.com'> Animated seach</a>
-	</nav>
-      </section>
-    <section><Animated search={search}/></section>
-    </main>
+      <Basic></Basic>
+      <main>
+        <Route path="/">
+          <section>
+            <nav>
+	      <Link to="/search/animated"> Animated search</Link>             
+            </nav>
+          </section>
+        </Route>
+        <Route exact path="/search/animated">
+	  <section><Animated search={search}/></section>
+        </Route>
+      </main>
     </div>
   );
 }
