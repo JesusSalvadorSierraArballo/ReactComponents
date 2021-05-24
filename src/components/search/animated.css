@@ -1,6 +1,6 @@
 :root {
     --lupa-color:#278dfc;
-    --length:60px;
+    --length:100px;
     --font-size: calc(var(--length) / 3);
     --size-open:calc(var(--length) * 6)  ;
 }

@@ -9,6 +9,10 @@
   align-items:center;
   min-height: 100vh;
   background-color: #297eff;
+  position: relative;
+}
+section{
+  position: relative;
 }
 /*.App {
   text-align: center;

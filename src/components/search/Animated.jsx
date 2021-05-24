@@ -1,6 +1,6 @@
 import React, {useState, useRef}from 'react'
-import Div from '../atoms/Div'
 //import Input from '../atoms/Input'
+import Div from '../atoms/Div'
 import Span from '../atoms/Span'
 import './animated.css';
 
@@ -32,7 +32,6 @@ export default function Animated(props) {
   }
 
   return(
-    <Div className='contenedor'>
       <Div onTransitionEnd={handleOnTransitionEnd} className={`search ${statusInput ? 'active' : ''}`}>
         <Div className='icon'
           onClick={handleToggleSearch}></Div>
@@ -45,6 +44,5 @@ export default function Animated(props) {
 	    <Span className="clear" onClick={clearSearchField}></Span>
 	</Div>
       </Div>
-    </Div>
   )
 }
