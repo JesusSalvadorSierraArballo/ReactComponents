@@ -1,0 +1,107 @@
+:root {
+  --color-off:#030b0f;
+  --color-on: #efb810;
+  --title-color:#fff;
+  --button-text-color:#fff;
+  --assorted-title-color:#fff;
+  --icon:'\f005';
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding:30px;
+  border-radius: 10px;
+  box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.25),
+	inset  2px  2px 5px rgba(255, 255, 255, 0.25),
+	       8px 30px 30px rgba(0,0,0,0.4),
+	inset -2px -2px 5px rgba(0,0,0,0.3)
+}
+.container h2 {
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: var(--title-color);
+}
+
+.container .skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  padding-bottom: 10px;
+  box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.25),
+	inset  2px  2px 5px rgba(255, 255, 255, 0.25),
+	       8px 30px 30px rgba(0,0,0,0.4),
+	inset -2px -2px 5px rgba(0,0,0,0.3);
+}
+
+.container .skills h3 {
+  min-width: 180px;
+  text-align: right;
+  padding-right: 20px;
+  color: var(--assorted-title-color);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.container .skills .rating {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 10px 0;
+  padding-right: 20px;
+}
+.container .skills .rating input{
+  position: relative;
+  width: 20px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor:pointer;
+  appearance: none;
+  overflow: hidden;
+}
+.container .skills .rating input::before{
+  content: var(--icon);
+  position: absolute;
+  font-family: fontawesome;
+  font-size: 34px;
+  position: absolute;
+  left: 4px;
+  color: var(--color-off);
+  transition: .2s;
+}
+.container .skills .rating input:nth-child(2n+1)::before{
+  right: 4px;
+  left: initial;
+}
+.container .skills .rating input:hover ~ input::before,
+.container .skills .rating input:hover::before,
+.container .skills .rating input:checked ~ input::before,
+.container .skills .rating input:checked::before
+{
+  color: var(--color-on);
+}
+.container button{
+  color: var(--button-text-color);
+  background-color: #00f;
+  font-size: 20px;
+  padding: 6px 18px;
+  margin-top: 15px;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  border-color: transparent;
+  box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.25),
+	inset  2px  2px 5px rgba(255, 255, 255, 0.25),
+	       8px 30px 30px rgba(0,0,0,0.4),
+	inset -2px -2px 5px rgba(0,0,0,0.3);
+}
+
+.container button:active{
+  background-color: #1e5dbd;
+}
